@@ -12,6 +12,7 @@
   <input type="number" id="guess" name="guess">
   <button onclick="numberGuessing()" id="guess-btn" style="background-color: green; border: none; border-radius: 0.3rem; padding: 0.5rem; margin-top: 0.5rem; color: white;">Submit Guess</button>
   <p id="message"></p>
+  <p id="refresh"></p>
 </body>
 <script>
 let numberGuess = Math.floor(Math.random() * 10) + 1;
@@ -25,6 +26,7 @@ function numberGuessing(){
       document.getElementById('message').innerHTML = "🎉 You guessed it right!";
       document.getElementById('guess').disabled = true;
       disableBtn.disabled = true;
+      document.getElementById('refresh').innerHTML = "Refresh the browser to start the game over again";
     }
   //if(input === numberGuess){
     //document.getElementById('message').innerHTML = "🎉 You guessed it right!";
@@ -35,6 +37,7 @@ function numberGuessing(){
         document.getElementById('message').innerHTML = "❌ Game over! The number was " + numberGuess;
         document.getElementById('guess').disabled = true;
         disableBtn.disabled = true;
+        document.getElementById('refresh').innerHTML = "Refresh the browser to start the game over again";
       }
       else{
         document.getElementById('message').innerHTML = "you have " +attempts+" attempts left";
