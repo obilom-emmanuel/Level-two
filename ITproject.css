@@ -29,6 +29,12 @@ body {
   font-weight: bold;
 }
 
+form button{
+  background-color: blue;
+  border: none;
+  color: white;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -52,3 +58,21 @@ li {
   cursor: pointer;
 }
 
+@media (max-width: 500px){
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+  input{
+    margin-bottom: 0.1rem;
+    padding: 0.1rem;
+  }
+  form button{
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+  }
+  select{
+    margin-bottom: 0.1rem;
+    padding: 0.1rem;
+  }
+}
