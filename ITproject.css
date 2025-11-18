@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.container {
+  width: 350px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.income p {
+  color: green;
+  font-weight: bold;
+}
+
+.expense p {
+  color: red;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #ddd;
+  padding: 10px;
+  margin: 5px 0;
+  position: relative;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
