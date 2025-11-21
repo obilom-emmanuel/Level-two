@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>An application that check calculations</h1>
+    <input type="number" placeholder="Enter a number" id="firstNumber">
+    <input type="text" placeholder="Enter an operator" id="operator">
+    <input type="number" placeholder="Enter a number" id="secondNumber">
+    <button onclick="checkResult()">result</button>
+</body>
+<script>
+    function checkResult(){
+    let firstNum = Number(document.getElementById("firstNumber").value);
+    let operator = document.getElementById("operator").value;
+    let secondNum = Number(document.getElementById("secondNumber").value);
+
+    console.log(eval(firstNum +operator+ secondNum));
+    }
+    // checkResult();
+</script>
+</html>
