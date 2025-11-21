@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Even and Odd Number Checker</title>
+</head>
+<body style="text-align: center;">
+	<h1 style="text-align: center; color: blue; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">Check if a number is even or odd</h1>
+
+	<input type="number" name="Check" id="even" placeholder="Check if a number is even" style="padding: 0.8rem; border-radius: 0.3rem">
+	<button onclick="checkEven()" style="background-color: gold; color: blue; padding: 1rem; border: none; border-radius: 0.3rem">Check For Even Number</button><br><br><br>
+
+	<input type="number" name="numberCheck" id="odd" placeholder="Check if a number is odd" style="padding: 0.8rem; border-radius: 0.3rem">
+	<button onclick="checkOdd()" style="background-color: gold; color: blue; padding: 1rem; border: none; border-radius: 0.3rem">Check For Odd Number</button>
+</body>
+<script>
+	//An application that check for odd or even number
+
+
+	//Declare a number variable
+	// var number;
+
+	//Request a number from user
+	// number = prompt('Enter a number');
+	// var result = Number(number);
+	
+	// var result;
+	// function getValue(){
+	//     result = Number(document.getElementById('even').value)
+	// }
+
+	function checkEven(){
+		var result = Number(document.getElementById('even').value);
+		// getValue();
+		if(result % 2 == 0){
+		    alert('The number you entered is even');
+	    }
+	    else{
+		    alert('The number you entered is not even');
+	    }
+	}
+
+	//Condition to determine if a number is even or odd
+	function checkOdd(){
+		var result = Number(document.getElementById('odd').value);
+		// getValue();
+		if(result % 2 == (1 || -1)){
+		    alert('The number you entered is odd');
+	    }
+	    else{
+		    alert('The number you entered is not odd');
+	    }
+	}
+	
+</script>
+</html>

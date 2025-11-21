@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grade checker</title>
+</head>
+<body>
+	<h1>Calculate your grade</h1>
+	<input type="number" name="score" id="score" placeholder="Enter your score">
+	<button onclick="checkScore()">Check your score</button>
+	
+</body>
+<script>
+	//An application that determines the grade of a student
+
+
+	//Create a variable
+	// var myScore;
+
+	//Prompt a user to input a value
+	// myScore = prompt('Enter your grade');
+
+	
+	//Convert input (string) to number
+	// var myScore = Number(myScore);
+
+	function checkScore(){
+		var myScore = Number(document.getElementById('score').value);
+
+		if(myScore == null || myScore == ""){
+	    	alert('You did not enter any score');
+	    }
+
+		else if(myScore >= 0 && myScore < 39){
+		    alert("Your grade is 'F'");
+	    }
+	   
+	    else if(myScore >= 40 && myScore < 45){
+		    alert("Your grade is 'E'");
+	    }
+	    else if(myScore >= 45 && myScore < 50){
+		    alert("Your grade is 'D'");
+	    }
+	    else if(myScore >= 50 && myScore < 60){
+		    alert("Your grade is 'C'");
+	    }
+	    else if(myScore >= 60 && myScore < 70){
+		    alert("Your grade is 'B'");
+	    }
+	    else if(myScore >= 70 && myScore <= 100){
+	    	alert("Your grade is 'A'");
+	    }
+	    else if(myScore < 0 || myScore > 100){
+		    alert('You entered an invalid number');
+	    }
+	    else{
+		    alert('Kindly enter a number');
+	    }
+	}
+	//Use student score to determine grade
+	
+</script>
+</html>

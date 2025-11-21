@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Set Timer</title>
+	<style>
+		.time{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>A timer Application</h1>
+	
+	<!-- <button onclick="myTimer()">Check Time</button> -->
+
+	<input type="number" name="" id="hours" placeholder="Enter hours">
+	<input type="number" name="" id="minutes" placeholder="Enter minutes">
+	<input type="number" name="" id="seconds" placeholder="Enter seconds">
+	<button onclick="startTimer()">start</button>
+
+	<div class="time">
+		<h2>hours:minutes:seconds</h2>
+	    <h2 id="displayTime">00:00:00</h2>
+	    <p id="invalidEntryResponse"></p>
+	</div>
+
+	
+</body>
+<script>
+	// setInterval(myTimer, 1000)
+	// function myTimer(){
+	// 	let myTime = new Date();
+	// 	displayTime.innerText = myTime.toLocaleTimeString();
+	// 	// console.log(myTime.toLocaleTimeString());
+	// }
+
+	let totalSeconds = 0;
+
+	function startTimer(){
+		let h = Number(document.getElementById('hours').value)
+		let m = Number(document.getElementById('minutes').value)
+		let s = Number(document.getElementById('seconds').value)
+
+		if(h < 0 || m < 0 || s < 0){
+			invalidEntryResponse.innerText = ('Enter a number that is greater than 0')
+			return;
+		}
+		
+		totalSeconds = (h*3600) + (m*60) + s;
+		
+
+		// hours.value = "";
+		// minutes.value = "";
+		// seconds.value = "";
+
+		setInterval(updateTimer, 1000);
+		
+	}
+	
+	function updateTimer(){
+		if(totalSeconds<=0){
+		return
+	}
+
+		totalSeconds--;
+
+		let hours = Math.floor(totalSeconds/3600);
+		let minutes = Math.floor((totalSeconds%3600)/60);
+		let seconds = Math.floor(totalSeconds%60);
+		
+
+		hours = formattedTime(hours);
+		minutes = formattedTime(minutes);
+		seconds = formattedTime(seconds);
+
+		let fullTime = hours+":"+minutes+":"+seconds
+		displayTime.innerHTML = fullTime;
+	}
+	function formattedTime(value){
+		if(value < 10){
+			return "0" + value;
+		}
+		else{
+			return value;
+		}
+	}
+	// setInterval(updateSeconds, 1000);
+</script>
+</html>

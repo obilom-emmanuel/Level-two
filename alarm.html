@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Alarm Application</h1>
+	<input type="number" name="" id="minutes" placeholder="Enter minutes">
+	<input type="number" name="" id="hours" placeholder="Enter hours">
+	<button onclick="setAlarm()">Set Alarm</button>
+</body>
+<script>
+	// let getMinutes = Number(prompt('Enter minutes'));
+	// let time = new Date();
+
+	function setAlarm(){
+		// let setHour = Number(document.getElementById('hours').value);
+		// let checkHour = setInterval(() => {
+			// let hour = time.getHour();
+		// })
+
+
+		let setMinutes = Number(document.getElementById('minutes').value);
+		let setHour = Number(document.getElementById('hours').value);
+	    let checkAlarm = setInterval(() => {
+		    let time = new Date();
+		    let minutes = time.getMinutes();
+		    let hours = time.getHours();
+
+		    // console.log(hours);
+		    // console.log(minutes);
+		    // console.log(setMinutes);
+		    // console.log(setHour);
+
+		    if(minutes == setMinutes && hours == setHour){
+			    console.log('it is time')
+			    clearInterval(checkAlarm);
+		    }
+	    }, 1000)
+	}
+	
+</script>
+</html>

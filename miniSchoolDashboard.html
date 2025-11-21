@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Welcome to the Dashboard</h1>
+	<h1 id="displayFirstName"></h1>
+</body>
+<script>
+	var currentUserEmail = "";
+	var currentUserDetails = {};
+	var allStudents = [];
+	if(localStorage.getItem("currentUserEmail")){
+		currentUserEmail = localStorage.getItem("currentUserEmail");
+	}
+	allStudents = JSON.parse(localStorage.getItem("allStudents"));
+	for(var i = 0; i<allStudents.length; i++){
+		if(currentUserEmail == allStudents[i].email){
+			currentUserDetails = allStudents[i];
+		}
+	}
+	displayFirstName.innerHTML = `Hello ${currentUserDetails.firstName}`;
+	console.log(currentUserDetails)
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<center>Sign in</center>
+	<input type="text" name="" placeholder="Enter Your Email" id="email">
+	<input type="text" name="" placeholder="Enter Your Password" id="password">
+	<button onclick="signIn()">Sign In</button>
+</body>
+<script>
+	var allStudents = [];
+	var detailsFound = false;
+	var currentUserEmail = "";
+	if(localStorage.getItem("allStudents")){
+		allStudents = JSON.parse(localStorage.getItem("allStudents"))
+	}
+	function signIn(){
+		for(var i = 0; i<allStudents.length; i++){
+			if(((email.value).toLowerCase()).trim() == allStudents[i].email && password.value == allStudents[i].password){
+				currentUserEmail = allStudents[i].email;
+				detailsFound = true;
+				break;
+			}else{
+				detailsFound = false
+			}
+		}
+		if(detailsFound == true){
+			console.log("Correct Details")
+			localStorage.setItem("currentUserEmail", currentUserEmail);
+			window.location.href = "./miniSchoolDashboard.html"
+		}else{
+			console.log("Incorrect Details")
+		}
+	}
+</script>
+</html>

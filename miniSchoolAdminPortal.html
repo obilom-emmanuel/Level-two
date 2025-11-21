@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		nav{
+			display: flex;
+			gap: 4rem;
+		}
+	</style>
+</head>
+<body onload="displayAllStudents()">
+
+	<nav>
+		<a href="miniSchoolPortal.html">Home</a>
+		<a href="miniSchoolAdminPortal.html">Admin</a>
+	</nav>
+	<h1>Welcome To Admin portal</h1>
+	<h1 id="userAgeDisplay"></h1>
+	<table border="1" id="studentTable"></table>
+</body>
+<script>
+	// var myFruits = JSON.parse(localStorage.getItem("myFruits"))
+	// userAgeDisplay.innerText = myFruits;
+	// console.log(myFruits)
+	// console.log(myFruits[0])
+	var allStudents = [];
+	if(localStorage.getItem("allStudents")){
+		allStudents = JSON.parse(localStorage.getItem("allStudents"))
+		console.log(allStudents);
+	}
+
+	function displayAllStudents(){
+		studentTable.innerHTML = `
+			<tr>
+			    <th>S/N</th>
+			<th>First Name</th>
+			<th>Middle Name</th>
+			<th>Last Name</th>
+			<th>Date of Birth</th>
+			<th>Action</th>
+			</tr>
+		`
+
+		for(var i = 0; i < allStudents.length; i++){
+			studentTable.innerHTML += `
+				<tr>
+				<td>${i+1}</td>
+				<td>${allStudents[i].firstName}</td>
+				<td>${allStudents[i].middleName}</td>
+				<td>${allStudents[i].lastName}</td>
+				<td>${allStudents[i].dateOfBirth}</td>
+				<td>
+				  <button onclick="deleteStudent(${i})">Delete Student</button>
+				</td>
+				</tr>
+			`
+		}
+	}
+	function deleteStudent(index){
+		allStudents.splice(index,1)
+		localStorage.setItem("allStudents", JSON.stringify(allStudents))
+		displayAllStudents()
+	}
+</script>
+</html>

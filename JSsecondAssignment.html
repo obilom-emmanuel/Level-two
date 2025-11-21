@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// An application that check if a student can be admitted by jamb
+
+
+	//Collect input from user
+	var score;
+	score = prompt('Enter your score');
+
+	//Convert score (string) to number
+	var score = Number(score);
+
+	//Use score to check the condition of being admitted
+	if(score >= 120 && score <= 400){
+		alert('You passed');
+	}
+	else if(score < 120 && score >= 0){
+		alert('You failed');
+	}
+	else if(score < 0 || score > 400){
+		alert('You entered and invalid number');
+	}
+	else{
+		alert('What you entered is not a number');
+	}
+</script>
+</html>

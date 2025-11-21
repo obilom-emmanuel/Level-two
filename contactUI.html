@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		h1{
+			margin-left: 11rem;
+			font-family: sans-serif;
+		}
+		.input{
+			border-bottom: 1px solid gray;
+			border-top: 1px solid gray;
+		}
+		input{
+			padding: 1rem 2rem;
+			display: block;
+			border: none;
+			width: 100%;
+			font-size: 1.2rem;
+		}
+		button{
+			padding: 1rem 2rem;
+			border: 1px solid gray;
+			border-radius: 2rem;
+			margin-left: 8rem;
+			margin-top: 2rem;
+			width: 20%;
+			background: mediumblue;
+			color: white;
+			font-size: 1.2rem;
+		}
+		.display{
+			display: flex;
+			gap: 5rem;
+			font-size: 1.2rem;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>Add Contact</h1>
+	</div>
+	<input class="input" type="text" name="" placeholder="Name" id="phoneName">
+	<input class="input" type="number" name="" placeholder="Phone" id="phone">
+	<button onclick="contactName()">Add Contact</button>
+	<div class="">
+		<p id="displayContactName"></p>
+		<!-- <p id="displayContactNumber"></p><br><br> -->
+	</div>
+</body>
+<script>
+	let contactList = [];
+	// let contactNumberList = [];
+	function contactName(){
+		if(phoneName.value == "" || phone.value == ""){
+			displayContactName.innerHTML = `Enter a phone contact`
+		}
+		else{
+			contactList.push({name: phoneName.value, phoneNumber: phone.value});
+			output = "";
+			for(var i = 0; i<contactList.length; i++){
+				output += `${contactList[i].name} - ${contactList[i].phoneNumber}<br><hr>`
+			}
+	        displayContactName.innerHTML = `${output}`;
+	        
+		    // console.log(contactNameList);
+
+		    // contactNumberList.push(phone.value);
+	        // displayContactNumber.innerHTML = contactNumberList;
+	        phoneName.value = "";
+	        phone.value = "";
+		}
+		
+	}
+	function deleteContact(){
+
+	}
+</script>
+</html>

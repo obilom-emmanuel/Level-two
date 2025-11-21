@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body style="text-align: center;">
+	<h1 style="background-color: gold; text-decoration: underline; text-decoration-style: double; text-decoration-color: blue;">Welcome to my todo Application</h1>
+	<input type="text" name="" placeholder="What do you want to do?" id="todoInput" id="todoInput" style="padding: 1rem;">
+	<button style="background-color: blue; color: white; padding: 1rem;" onclick="addTodo()">Add Todo</button>
+	<button style="background-color: blue; color: white; padding: 1rem;" onclick="deleteTodoByIndex()">Delete Todo</button>
+	<button onclick="removeLastTodo()">Remove last todo List</button>
+	<button onclick="removeFirstTodo()">Remove First Todo</button>
+	<button onclick="replaceTodo()">Replace Todo</button>
+	<hr>
+
+	<div id="todoOutput"></div>
+
+</body>
+<script>
+	var myAge = 900;
+	var myName = "Emmanuel"
+
+	// console.log(myName.length);
+	// console.log(myName.toUpperCase());
+	// console.log(myName.toLowerCase());
+
+	// var allNames = ["Joshua", "Daniel", "Josiah", "Emmanuel"];
+	// console.log(allNames);
+	// console.log(allNames.length);
+	// console.log(allNames[0]);
+
+	// allNames.push("Alphonsus");
+	// allNames.splice(2,2);
+	// console.log(allNames);
+	var todoList = [];
+
+	function addTodo(){
+		var todoValue = todoInput.value;
+		console.log('My do List');
+		// todoList.push(todoValue);
+		if(todoValue == ""){
+			alert("Enter an input")
+		}
+		else{
+			todoList.push(todoInput.value);
+			todoInput.value = "";
+			displayAllTodo();
+		}
+	}
+		function displayAllTodo(){
+			todoOutput.innerHTML = "";
+		for(var i = 0; i < todoList.length; i++){
+			todoOutput.innerHTML += `<h1> (${i+1}) ${todoList[i]} <button onclick="deleteTodo(${i})">Delete Todo</button> <button onclick="editTodo(${i})">Edit Todo</button></h1>`;
+		}
+		}
+		// console.log(todoList);
+		function removeLastTodo(){
+			todoList.pop();
+			displayAllTodo();
+		}
+		function deleteTodoByIndex(){
+			var userIndex = prompt("Which index do you want to delete");
+			todoList.splice(userIndex, 1);
+			displayAllTodo();
+		}
+		function removeFirstTodo(){
+			todoList.shift();
+			displayAllTodo();
+		}
+		function replaceTodo(){
+			var replaceIndex = Number(prompt('Enter a number'));
+			var replaceValue = prompt('Enter the value you want to use for replacement');
+			todoList.splice(replaceIndex, replaceValue);
+			displayAllTodo();
+		}
+		function deleteTodo(index){
+			todoList.splice(index, 1);
+			displayAllTodo()
+		}
+		function editTodo(index){
+			var replacementValue = prompt(todoList[index])
+			todoList.splice(index,1,replacementValue)
+			displayAllTodo()
+		}
+
+
+</script>
+</html>

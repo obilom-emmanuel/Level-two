@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+			padding: 2rem 20%;
+		}
+		.head{
+			text-align: center;
+		}
+		label{
+			color: white;
+		}
+		.love-cards{
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+		.love-card{
+			flex: 1;
+			background-color: red;
+			border-radius: 0.5rem;
+			padding: 1rem 1rem;
+		}
+		input{
+			padding: 1rem 0.5rem;
+			border-radius: 0.3rem;
+			display: block;
+			border: none;
+			margin-top: 0.5rem;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		.buttons{
+			display: flex;
+			gap: 1rem;
+		}
+		button{
+			padding:1rem 0.5rem;
+			border-radius: 0.3rem;
+			width: 100%;
+			margin-bottom: 1rem;
+			margin-top: 1.5rem;
+			border: none;
+		}
+		.gif2{
+			width: 5rem;
+			height: 5rem;
+			border-radius: 0.3rem;
+		}
+		.Calculate{
+			font-size: 1.2rem;
+			background-color: red;
+			color: white;
+		}
+		/*.percentage{
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+			border: 1px solid red;
+			color: red;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			align-self: center;
+			margin-left: 43%;
+		}*/
+		#names{
+			text-align: center;
+			color: blue;
+		}
+		#percentage{
+			text-align: center;
+			margin-left: 43%;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="head">
+			<h1>Find Your Love Here</h1>
+			<video src="./Images/loveGIF.mp4" loop controls autoplay></video>
+		</div>
+		<div class="love-cards">
+			<div class="love-card">
+				<label>Your Name*
+					<input type="text" name="" placeholder="Write your name" id="yourName">
+				</label>
+				<div class="buttons">
+					<button>Male</button>
+					<button>Female</button>
+				</div>
+			</div>
+			<video src="./Images/loveGIF2.mp4" loop controls autoplay class="gif2"></video>
+			<div class="love-card">
+				<label>Your Partner's Name*
+					<input type="text" name="" placeholder="Write your partner's name" id="partnerName">
+				</label>
+				<div class="buttons">
+					<button>Male</button>
+					<button>Female</button>
+				</div>
+			</div>
+		</div>
+		<button class="Calculate" id="calculate" onclick="calculateLove()">Calculate Love</button><br><br>
+		<!-- <h1 style="text-align: center; color: blue;" id="result"></h1> -->
+		<h3 id="names"></h3>
+		<!-- <div id="percentage"></div> -->
+	</div>
+	<audio src="" id="booSound"></audio>
+</body>
+<script>
+	
+		function calculateLove(){
+		    // result.innerHTML = ("Love Percentage Between");
+		    // names.innerHTML = `${yourName.value} & ${partnerName.value}`;
+		    // percentage.innerHTML = `${Math.floor(Math.random()*100)+1}%`;
+		    // percentage.classList.add("percentage");
+		    if(yourName.value == "" || partnerName.value == ""){
+		        names.innerHTML = "Please enter a name at both ends";
+		        return;
+	        }
+
+		    const calculate = document.getElementById('calculate');
+		    const link = document.createElement('a');
+		    link.href = "loveCalculator2.html";
+		    calculate.parentNode.insertBefore(link, calculate);
+		    link.appendChild(calculate);
+
+		    localStorage.setItem("hisName", yourName.value);
+		    localStorage.setItem("hisPartner", partnerName.value);
+		    boo()
+	    }
+	    function boo(){
+	    	booSound.play();
+	    }
+</script>
+</html>

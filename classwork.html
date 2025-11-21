@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>My Button</h1>
+	<button onclick="evenNumberChecker()">Check Even Number</button>
+	<input type="" name="" placeholder="Enter a number" id="numberInput">
+	<p id="evenNumberDisplay"></p>
+</body>
+<script>
+	// var myName = `Kunle`;
+	// var myAge = 96;
+	// var gender = "male";
+
+	// console.log(`My name is ${myName} and I am ${myAge} years old. I am also of the ${gender} gender`);
+	// console.log("my name is "+myName+" and I am "+myAge+" years old. I am also of the "+gender+" gender");
+
+	 function evenNumberChecker(){
+		var evenNumberLength = numberInput.value;
+		for(var i = 0; i<= evenNumberLength; i++){
+			if(i%2 == 0){
+				// console.log(i);
+				evenNumberDisplay.innerHTML = evenNumberDisplay.innerHTML+`<p>${i}</p>`;
+			}
+		}
+	 }
+	// evenNumberChecker();
+	// document.getElementById("evenNumberDisplay").innerText = "fish";
+</script>
+</html>

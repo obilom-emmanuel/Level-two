@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//An application that calculates factorial
+
+
+	//Accept input from user
+	var input = prompt('Enter a number and get the factorial');
+
+	//Convert input to number value
+	var factorial = Number(input);
+
+	if(factorial == 0){
+		console.log('The factorial of '+factorial+' is 1');
+	}
+	else if(factorial < 0){
+		console.log('You entered an invalid factorial number');
+	}
+
+	//Initialize a variable that will accept each factorial and append result
+	var j = 1;
+
+	//calculate factorial
+	for(var i = factorial; i >= 1; i--){
+		j = j*i;
+	}
+
+	//Display factorial
+	if(factorial > 0){
+		console.log('The factorial of '+factorial+ ' is ' +j);
+	}
+	
+</script>
+</html>

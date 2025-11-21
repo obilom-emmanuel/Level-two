@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		img{
+			width: 8rem;
+			height: 8rem;
+		}
+	</style>
+</head>
+<body>
+	<h1>Throw a Die</h1>
+	<!-- <video src="./Images/DieGIF.mp4"></video> -->
+	<img src="./Images/DieGIF.gif" id="dieImage">
+	<button onclick="getDieValue()">Get a Die Value</button>
+</body>
+<script>
+	function getDieValue(){
+		let getImage = document.getElementById('dieImage');
+		let dieValue = Math.floor(Math.random()*6)+1;
+		if(dieValue == 1){
+			getImage.src = "./Images/DieImg1.jpeg";
+		}
+		else if(dieValue == 2){
+			getImage.src = "./Images/DieImg2.jpeg";
+		}
+		else if(dieValue == 3){
+			getImage.src = "./Images/DieImg3.jpeg";
+		}
+		else if(dieValue == 4){
+			getImage.src = "./Images/DieImg4.jpeg";
+		}
+		else if(dieValue == 5){
+			getImage.src = "./Images/DieImg5.jpeg";
+		}
+		else{
+			getImage.src = "./Images/DieImg6.jpeg";
+		}
+	    
+	}
+	
+</script>
+</html>

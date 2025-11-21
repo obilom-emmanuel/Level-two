@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//An application that prints Fizz, Buzz and Fizz Buzz when a number is divisible by 3, 5 and both without remainder respectively
+
+
+	//Create a variable
+	var input;
+
+	//Request an input from a user
+	input = prompt('Enter a number');
+
+	//Convert value to number
+	var number = Number(input);
+
+	//Determine if the number is divisible by 3 or 5 or both without remainder
+	if(isNaN(number)){
+		alert('Kindly enter a number');
+	}
+	else if(number%3 == 0 && number%5 == 0){
+		alert('FIZZ BUZZ');
+	}
+	else if(number % 3 == 0){
+		alert('FIZZ');
+	}
+	else if(number % 5 == 0){
+		alert('BUZZ');
+	}
+	else{
+		alert('Number is not divisible by 3 nor by 5');
+	}
+	
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		h1{
+			color: red;
+		}
+		h3{
+			color: blue;
+		}
+		.percentage{
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+			border: 1px solid red;
+			color: red;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			align-self: center;
+			margin-left: 47.5%;
+		}
+		button{
+			padding: 0.8rem 1.2rem;
+			border-radius: 0.4rem;
+			background-color: red;
+			color: white;
+			border: none;
+			font-size: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<h1>Love percentage between</h1>
+	<h3 id="theirNames"></h3>
+    <div id="percentage"></div>
+    <h3>Shey the love thing dey sweet you?</h3>
+    <a href="loveCalculator.html"><button>Calculate Love Again</button></a>
+</body>
+<script>
+	const hisName = localStorage.getItem("hisName");
+	const hisPartner = localStorage.getItem("hisPartner")
+	theirNames.innerHTML = `${hisName} & ${hisPartner}`;
+	percentage.innerHTML = `${Math.floor(Math.random()*100)+1}%`;
+	percentage.classList.add("percentage");
+</script>
+</html>

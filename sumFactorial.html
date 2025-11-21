@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//An application that calculate the sum factorial of a number
+
+
+	//Accept input from a user
+	var input = prompt('Enter a number and get the sum factorial');
+
+	//Convert input to a number value
+	var sumFactorial = Number(input);
+
+	if(sumFactorial < 0){
+		console.log('You entered an invalid factorial number');
+	}
+
+	//Initialize a variable that will accept each factorial and append result
+	var j = 0;
+
+	//Calculate factorial
+	for(var i = sumFactorial; i >= 0; i--){
+		j = j+i;
+	}
+	if(sumFactorial >= 0){
+		console.log('The sum-factorial of '+sumFactorial+' is '+j);
+	}
+	
+</script>
+</html>
