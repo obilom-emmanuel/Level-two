@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess Number Game</title>
+</head>
+<body style="text-align: center">
+  <h1>Guess The Number</h1>
+  <p>We have selected a random number between 1 - 10 see if you can guess it.</p>
+  <span>Enter a guess</span>
+  <input type="number" id="guess" name="guess">
+  <button onclick="numberGuessing()" id="guess-btn" style="background-color: green; border: none; border-radius: 0.3rem; padding: 0.5rem; margin-top: 0.5rem; color: white;">Submit Guess</button>
+  <p id="message"></p>
+  <p id="refresh"></p>
+</body>
+<script>
+let numberGuess = Math.floor(Math.random() * 10) + 1;
+let attempts = 5;
+function numberGuessing(){
+  let input = Number(document.getElementById('guess').value);
+  let disableBtn = document.getElementById('guess-btn');
+  
+  if(attempts > 0){
+    if(input === numberGuess){
+      document.getElementById('message').innerHTML = "🎉 You guessed it right!";
+      document.getElementById('guess').disabled = true;
+      disableBtn.disabled = true;
+      document.getElementById('refresh').innerHTML = "Refresh the browser to start the game over again";
+    }
+    
+    else{
+      attempts--;
+      if(attempts === 0){
+        document.getElementById('message').innerHTML = "❌ Game over! The number was " + numberGuess;
+        document.getElementById('guess').disabled = true;
+        disableBtn.disabled = true;
+        document.getElementById('refresh').innerHTML = "Refresh the browser to start the game over again";
+      }
+      else{
+        document.getElementById('message').innerHTML = "you have " +attempts+" attempts left";
+      }
+    }
+  }
+  if(input != numberGuess){
+    if(numberGuess > input){
+      alert('Enter a higher value');
+    }else{
+      alert('Enter a lower value');
+    }
+  }
+}
+
+</script>
+</html>
