@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Application</title>
+  <style>
+  body{
+    padding: 3.5rem;
+    margin: 0;
+  }
+  .display{
+    border: 1px solid darkgray;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 0.5rem;
+    background-color: beige;
+    
+  }
+  input{
+    border: none;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    background-color: beige;
+  }
+  #input{
+    color: red;
+  }
+  .buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    border: 1px solid darkgray;
+    padding: 0.3rem 0.4rem 0.6rem;
+    background-color: gold;
+  }
+  button{
+    padding: 0.8rem 0.9rem;
+    font-size: 1rem;
+    background-color: bisque;
+  }
+  .zero, .clear{
+    grid-column: 1 / span 2;
+  }
+  .equals{
+    grid-column: 3 / span 2;
+  }
+  </style>
+</head>
+<body>
+  <div class="display">
+    <input type="text" placeholder="0" id="displayValue">
+    <input type="text" placeholder="0" id="displayResult">
+  </div>
+  <div class="buttons">
+    <button class="clear" onclick="clearDisplay()">Clear</button>
+    <button onclick="display('%')">%</button>
+    <button onclick="display('*')">*</button>
+    <button onclick="display('1')">1</button>
+    <button onclick="display('2')">2</button>
+    <button onclick="display('3')">3</button>
+    <button onclick="display('+')">+</button>
+    <button onclick="display('4')">4</button>
+    <button onclick="display('5')">5</button>
+    <button onclick="display('6')">6</button>
+    <button onclick="display('-')">-</button>
+    <button onclick="display('7')">7</button>
+    <button onclick="display('8')">8</button>
+    <button onclick="display('9')">9</button>
+    <button onclick="display('/')">/</button>
+    <button class="zero" onclick="display('0')">0</button>
+    <button class="equals" onclick="calculate()">=</button>
+  </div>
+</body>
+<script>
+function display(value){
+  displayValue.value += value;
+}
+function calculate(){
+  try{
+    displayResult.value = eval(displayValue.value);
+  }
+  catch(error){
+    displayResult.value = "Error"
+  }
+}
+function clearDisplay(){
+  displayValue.value = "";
+}
+</script>
+</html>
